@@ -1,0 +1,15 @@
+logging.pattern.level: "%5p [${spring.zipkin.service.name:${spring.application.name:-}},%X{traceId:-},%X{spanId:-}][%X{store-id:-}] "
+server.port: 8085
+spring:
+  application.name: "App 1"
+  sleuth:
+    baggage:
+      correlation-fields:
+        - store-id
+      remote-fields:
+        - store-id
+  cloud:
+    stream:
+      bindings:
+        messaging-out-0:
+          destination: "messaging"

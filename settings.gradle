@@ -1,0 +1,4 @@
+rootProject.name = "sleuth-rabbitmq-webclient"
+
+include "app1"
+include "app2"
